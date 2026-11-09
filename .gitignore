@@ -1,0 +1,9 @@
+# Build outputs
+/target
+
+# Scratch
+/tmp
+
+# Environment
+.env
+.env.*
