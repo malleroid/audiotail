@@ -9,7 +9,7 @@ license = "MIT"
 publish = false
 
 [dependencies]
-clap = { version = "=4.6.8", features = ["derive"] }
+clap = { version = "=4.6.9", features = ["derive"] }
 
 [target.'cfg(target_os = "macos")'.dependencies]
 cidre = { version = "=0.30.1", default-features = false, features = ["core_audio", "dispatch", "macos_14_2"] }
