@@ -7,5 +7,22 @@
   "vulnerabilityAlerts": {
     "enabled": true,
     "labels": ["dependencies", "security"]
-  }
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Keep package.rust-version in sync with rust-toolchain.toml",
+      "managerFilePatterns": ["/(^|/)Cargo\\.toml$/"],
+      "matchStrings": ["\\nrust-version\\s*=\\s*\"(?<currentValue>[^\"]+)\""],
+      "depNameTemplate": "rust",
+      "datasourceTemplate": "rust-version"
+    }
+  ],
+  "packageRules": [
+    {
+      "description": "Update the toolchain and rust-version in one PR",
+      "matchDepNames": ["rust"],
+      "groupName": "rust"
+    }
+  ]
 }
